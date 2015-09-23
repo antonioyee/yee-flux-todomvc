@@ -29,6 +29,10 @@
   },
   "author": "Antonio Yee",
   "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "git@github.com:antonioyee/yee-flux-todomvc.git"
+  },
   "browserify": {
     "transform": [
       "reactify",
@@ -36,6 +40,6 @@
     ]
   },
   "jest": {
-    "rootDir": "./js"
+      "rootDir": "./js"
   }
 }
