@@ -1,0 +1,19 @@
+{
+  "name": "flux-yee",
+  "version": "0.0.0",
+  "authors": [
+    "ANTONIO YEE <yee.antonio@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
+  }
+}
