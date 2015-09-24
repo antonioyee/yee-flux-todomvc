@@ -4,6 +4,9 @@ var MainSection = require('./MainSection.react');
 var React = require('react');
 var TodoStore = require('../stores/TodoStore');
 
+var Parse = require('parse').Parse;
+var ParseReact = require('parse-react');
+
 function getTodoState() {
     return {
         allTodos: TodoStore.getAll()
@@ -14,6 +17,14 @@ var TodoApp = React.createClass({
 
     getInitialState: function () {
         return getTodoState();
+    },
+
+    mixins: [ParseReact.Mixin],
+
+    observe: function() {
+        return {
+            items: (new Parse.Query('Items')).descending('createdAt')
+        };
     },
 
     componentDidMount: function () {
@@ -30,9 +41,9 @@ var TodoApp = React.createClass({
 
                 <Header />
 
-                <MainSection allTodos={this.state.allTodos} areAllComplete={this.state.areAllComplete} />
+                <MainSection allTodos={this.data.items} areAllComplete={this.state.areAllComplete} />
 
-                <Footer allTodos={this.state.allTodos}  />
+                <Footer allTodos={this.data.items}  />
 
             </div>
         );

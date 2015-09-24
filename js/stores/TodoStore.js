@@ -3,6 +3,8 @@ var EventEmitter = require('events').EventEmitter;
 var TodoConstants = require('../constants/TodoConstants');
 var assing = require('object-assign');
 
+var ParseReact = require('parse-react');
+
 var CHANGE_EVENT = 'change';
 
 var _todos = {};
@@ -46,7 +48,11 @@ var TodoStore =  assing({}, EventEmitter.prototype, {
             case TodoConstants.TODO_CREATE:
                 text = action.text.trim();
                 if ( text !== '' ) {
-                    create(text);
+
+                    ParseReact.Mutation.Create('Items', {
+                        text: text
+                    }).dispatch();
+
                     TodoStore.emitChange();
                 }
                 break;
