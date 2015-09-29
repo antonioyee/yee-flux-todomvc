@@ -58,7 +58,7 @@ var TodoStore =  assing({}, EventEmitter.prototype, {
                 break;
 
             case TodoConstants.TODO_DESTROY:
-                destroy(action.id);
+                ParseReact.Mutation.Destroy(action.id).dispatch();
                 TodoStore.emitChange();
                 break;
         }
