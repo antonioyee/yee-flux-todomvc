@@ -61,6 +61,18 @@ var TodoStore =  assing({}, EventEmitter.prototype, {
                 ParseReact.Mutation.Destroy(action.id).dispatch();
                 TodoStore.emitChange();
                 break;
+
+            case TodoConstants.TODO_UPDATE_TEXT:
+                text = action.text.trim();
+                if ( text !== '' && action.id !== '' ) {
+
+                    ParseReact.Mutation.Set(action.id, {
+                        text: text
+                    }).dispatch();
+
+                    TodoStore.emitChange();
+                }
+                break;
         }
 
     })
