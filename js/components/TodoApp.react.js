@@ -39,6 +39,10 @@ var TodoApp = React.createClass({
         return(
             <div className="container">
 
+                <button className="btn btn-xs btn-success pull-right" onClick={this._refresh.bind(this)} style={{'margin-top':'24px'}}  >
+                    <span className="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                </button>
+
                 <Header />
 
                 <MainSection allTodos={this.data.items} areAllComplete={this.state.areAllComplete} />
@@ -51,6 +55,10 @@ var TodoApp = React.createClass({
 
     _onChange: function () {
         this.setState(getTodoState());
+    },
+
+    _refresh() {
+      this.refreshQueries('items');
     }
 
 });

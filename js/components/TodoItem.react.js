@@ -32,7 +32,7 @@ var TodoItem = React.createClass({
                             </div>
                         </div>
                         <div className="col-sm-6">
-                            <button className="btn btn-xs btn-success pull-right" onClick={this._stopEditing} >
+                            <button className="btn btn-xs btn-warning pull-right" onClick={this._stopEditing} >
                                 <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
                             </button>
                         </div>
