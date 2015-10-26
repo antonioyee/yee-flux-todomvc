@@ -1,7 +1,7 @@
 {
   "name": "flux-yee",
   "version": "1.0.0",
-  "description": "",
+  "description": "Arquitectura Flux para aplicaciones en React ",
   "main": "js/app.js",
   "dependencies": {
     "classnames": "^2.1.3",
